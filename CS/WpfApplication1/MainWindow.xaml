@@ -1,0 +1,36 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="WpfApplication1.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="800" Loaded="Window_Loaded">
+    <Grid>
+
+        <dxpg:PivotGridControl x:Name="pivot" CustomFieldValueCells="pivot_CustomFieldValueCells" Margin="0,0,133,0">
+            <dxpg:PivotGridControl.Fields>
+                <dxpg:PivotGridField Area="DataArea" Caption="Value" FieldName="Value"/>
+                <dxpg:PivotGridField Area="ColumnArea" Caption="Year" FieldName="Date" GroupInterval="DateYear"/>
+                <dxpg:PivotGridField Area="ColumnArea" Caption="Quarter" FieldName="Date" GroupInterval="DateQuarter"/>
+                <dxpg:PivotGridField Area="ColumnArea" Caption="Month" FieldName="Date" GroupInterval="DateMonth"/>
+                <dxpg:PivotGridField Area="RowArea" Caption="Name" FieldName="Name"/>
+            </dxpg:PivotGridControl.Fields>
+        </dxpg:PivotGridControl>
+
+        <dxe:DateEdit x:Name="dateEdit1" HorizontalAlignment="Left" Margin="664,32,-5,0" VerticalAlignment="Top" Width="133"/>
+        <dxe:DateEdit x:Name="dateEdit2" HorizontalAlignment="Left" Margin="664,86,-5,0" VerticalAlignment="Top" Width="133"/>
+        <Button x:Name="button" Content="Add custom dates" HorizontalAlignment="Left" Margin="664,188,0,0" VerticalAlignment="Top" Width="128" Click="button_Click"/>
+        <Label x:Name="label" Content="Start Date" HorizontalAlignment="Left" Margin="674,5,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="End Date" HorizontalAlignment="Left" Margin="674,59,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="664,143,0,0" VerticalAlignment="Top" Width="128" SelectedIndex="0" RenderTransformOrigin="0.521,1.297">
+            <ListBoxItem Content="Day"/>
+            <ListBoxItem Content="Month"/>
+            <ListBoxItem Content="Quarter"/>
+            <ListBoxItem Content="Year"/>
+        </ComboBox>
+        <Label x:Name="label2" Content="Interval" HorizontalAlignment="Left" Margin="671,115,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
