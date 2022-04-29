@@ -9,13 +9,33 @@
         Title="MainWindow" Height="350" Width="800" Loaded="Window_Loaded">
     <Grid>
 
-        <dxpg:PivotGridControl x:Name="pivot" CustomFieldValueCells="pivot_CustomFieldValueCells" Margin="0,0,133,0">
+        <dxpg:PivotGridControl x:Name="pivot" CustomFieldValueCells="pivot_CustomFieldValueCells" Margin="0,0,133,0" DataProcessingEngine="Optimized">
             <dxpg:PivotGridControl.Fields>
-                <dxpg:PivotGridField Area="DataArea" Caption="Value" FieldName="Value"/>
-                <dxpg:PivotGridField Area="ColumnArea" Caption="Year" FieldName="Date" GroupInterval="DateYear"/>
-                <dxpg:PivotGridField Area="ColumnArea" Caption="Quarter" FieldName="Date" GroupInterval="DateQuarter"/>
-                <dxpg:PivotGridField Area="ColumnArea" Caption="Month" FieldName="Date" GroupInterval="DateMonth"/>
-                <dxpg:PivotGridField Area="RowArea" Caption="Name" FieldName="Name"/>
+                <dxpg:PivotGridField Area="DataArea" Caption="Value">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="Value"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField Area="ColumnArea" Caption="Year">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="Date" GroupInterval="DateYear"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField Area="ColumnArea" Caption="Quarter">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="Date" GroupInterval="DateQuarter"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField Area="ColumnArea" Caption="Month">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="Date" GroupInterval="DateMonth"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField Area="RowArea" Caption="Name">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="Name"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
             </dxpg:PivotGridControl.Fields>
         </dxpg:PivotGridControl>
 
