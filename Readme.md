@@ -22,8 +22,8 @@ The following image illustrates Pivot Grid that displays the custom `March` fiel
 [Fields](https://docs.devexpress.com/WPF/8024/controls-and-libraries/pivot-grid/fundamentals/fields)
 ## More Examples 
 
-- [Pivot Grid for WinForms - How to Add Custom Field Values (Rows/Columns) that Are Not Present in a Data Source](https://github.com/DevExpress-Examples/how-to-add-custom-field-values-rows-columns-that-are-not-present-in-a-datasource-e4493). 
+- [Pivot Grid for WinForms - How to Add Custom Field Values (Rows/Columns) that Are Not Present in a Data Source](https://github.com/DevExpress-Examples/how-to-add-custom-field-values-rows-columns-that-are-not-present-in-a-datasource-e4493)
 
-- [How to create a data source wrapper that adds an empty item to the lookup list](https://github.com/DevExpress-Examples/how-to-create-a-data-source-wrapper-that-adds-an-empty-item-to-the-lookup-list-e1180).
+- [How to create a data source wrapper that adds an empty item to the lookup list](https://github.com/DevExpress-Examples/how-to-create-a-data-source-wrapper-that-adds-an-empty-item-to-the-lookup-list-e1180)
 
 
