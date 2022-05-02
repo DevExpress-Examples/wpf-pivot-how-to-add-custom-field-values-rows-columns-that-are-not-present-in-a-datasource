@@ -8,8 +8,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="800" Loaded="Window_Loaded">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
 
-        <dxpg:PivotGridControl x:Name="pivot" CustomFieldValueCells="pivot_CustomFieldValueCells" Margin="0,0,133,0" DataProcessingEngine="Optimized">
+        <dxpg:PivotGridControl x:Name="pivot" CustomFieldValueCells="pivot_CustomFieldValueCells" DataProcessingEngine="Optimized">
             <dxpg:PivotGridControl.Fields>
                 <dxpg:PivotGridField Area="DataArea" Caption="Value">
                     <dxpg:PivotGridField.DataBinding>
@@ -38,19 +42,22 @@
                 </dxpg:PivotGridField>
             </dxpg:PivotGridControl.Fields>
         </dxpg:PivotGridControl>
+        <StackPanel Grid.Column="1">
+            <Label x:Name="label" Content="Start Date" Margin="5"/>
+            <dxe:DateEdit x:Name="dateEdit1" Margin="5"/>
+            <Label x:Name="label1" Content="End Date" Margin="5"/>
+            <dxe:DateEdit x:Name="dateEdit2" Margin="5"/>
+            <Label x:Name="label2" Content="Interval" Margin="5"/>
+            <ComboBox x:Name="comboBox" SelectedIndex="0" Margin="5">
+                <ListBoxItem Content="Day"/>
+                <ListBoxItem Content="Month"/>
+                <ListBoxItem Content="Quarter"/>
+                <ListBoxItem Content="Year"/>
+            </ComboBox>
 
-        <dxe:DateEdit x:Name="dateEdit1" HorizontalAlignment="Left" Margin="664,32,-5,0" VerticalAlignment="Top" Width="133"/>
-        <dxe:DateEdit x:Name="dateEdit2" HorizontalAlignment="Left" Margin="664,86,-5,0" VerticalAlignment="Top" Width="133"/>
-        <Button x:Name="button" Content="Add custom dates" HorizontalAlignment="Left" Margin="664,188,0,0" VerticalAlignment="Top" Width="128" Click="button_Click"/>
-        <Label x:Name="label" Content="Start Date" HorizontalAlignment="Left" Margin="674,5,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="End Date" HorizontalAlignment="Left" Margin="674,59,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="664,143,0,0" VerticalAlignment="Top" Width="128" SelectedIndex="0" RenderTransformOrigin="0.521,1.297">
-            <ListBoxItem Content="Day"/>
-            <ListBoxItem Content="Month"/>
-            <ListBoxItem Content="Quarter"/>
-            <ListBoxItem Content="Year"/>
-        </ComboBox>
-        <Label x:Name="label2" Content="Interval" HorizontalAlignment="Left" Margin="671,115,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="button" Content="Add custom dates"  Click="button_Click" Margin="5"/>
+        </StackPanel>
+
 
     </Grid>
 </Window>
